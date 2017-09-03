@@ -37,11 +37,11 @@ entity Vehcile{
     carImageURL String
 }
 
-entity Message{
-    message String
-    subject String
-    msgDateTime Instant
-}
+//entity Message{
+//   message String
+//  subject String
+//    msgDateTime Instant
+//}
 
 entity Rating{
     status Boolean
@@ -83,8 +83,8 @@ entity City{
 
 relationship ManyToOne{
 	Vehcile{user(firstName) required} to User,
-	Message{userSender(firstName) required} to User,
-	Message{userReciver(firstName) required} to User,	
+//  Message{userSender(firstName) required} to User,
+//	Message{userReciver(firstName) required} to User,	
     Driver{user(firstName) required} to User,
 	Passenger{user(firstName) required} to User,
 	Rating{driver(fullName) required} to Driver,
