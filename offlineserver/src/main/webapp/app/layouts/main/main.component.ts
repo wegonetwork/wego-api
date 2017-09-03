@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd, RoutesRecognized } from '@angular/router';
 
-import { JhiLanguageHelper, StateStorageService } from '../../shared';
+import { Title } from '@angular/platform-browser';
+import { StateStorageService } from '../../shared';
 
 @Component({
     selector: 'jhi-main',
@@ -10,7 +11,7 @@ import { JhiLanguageHelper, StateStorageService } from '../../shared';
 export class JhiMainComponent implements OnInit {
 
     constructor(
-        private jhiLanguageHelper: JhiLanguageHelper,
+        private titleService: Title,
         private router: Router,
         private $storageService: StateStorageService,
     ) {}
@@ -26,7 +27,7 @@ export class JhiMainComponent implements OnInit {
     ngOnInit() {
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
-                this.jhiLanguageHelper.updateTitle(this.getPageTitle(this.router.routerState.snapshot.root));
+                this.titleService.setTitle(this.getPageTitle(this.router.routerState.snapshot.root));
             }
         });
     }

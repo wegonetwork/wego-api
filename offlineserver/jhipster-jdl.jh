@@ -18,6 +18,11 @@ entity RideOffer{
     status RideStatus 
 }
 
+entity EthAccount{
+    ethaccount String
+}
+
+
 entity RideRequest{
     status RideStatus 
 }

@@ -1,0 +1,80 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "vehcile",
+            "otherEntityName": "vehcile",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "city",
+            "otherEntityName": "city",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "destination",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mapPoint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rideDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "frequancy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seatGender",
+            "fieldType": "Gender",
+            "fieldValues": "MALE,FEMALE"
+        },
+        {
+            "fieldName": "seatAge",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "smoking",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "luggage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mobileNumber",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "RideStatus",
+            "fieldValues": "CANCLED,DELAYED,EXPIRED"
+        }
+    ],
+    "changelogDate": "20170903013517",
+    "entityTableName": "ride",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass"
+}

@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "firstName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "model",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noSeats",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "carImageURL",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170903013521",
+    "entityTableName": "vehcile",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass"
+}

@@ -8,7 +8,6 @@
         "outDir": "target/www/app",
         "assets": [
             "content",
-            "i18n",
             "favicon.ico"
         ],
         "index": "index.html",

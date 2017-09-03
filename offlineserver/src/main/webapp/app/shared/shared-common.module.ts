@@ -3,8 +3,6 @@ import { Title } from '@angular/platform-browser';
 
 import {
     WegoSharedLibsModule,
-    JhiLanguageHelper,
-    FindLanguageFromKeyPipe,
     JhiAlertComponent,
     JhiAlertErrorComponent
 } from './';
@@ -14,22 +12,18 @@ import {
         WegoSharedLibsModule
     ],
     declarations: [
-        FindLanguageFromKeyPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ],
     providers: [
-        FindLanguageFromKeyPipe,
-        JhiLanguageHelper,
         Title,
         {
             provide: LOCALE_ID,
-            useValue: 'nl'
+            useValue: 'en'
         },
     ],
     exports: [
         WegoSharedLibsModule,
-        FindLanguageFromKeyPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]

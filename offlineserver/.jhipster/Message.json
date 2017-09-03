@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "userSender",
+            "otherEntityName": "user",
+            "otherEntityField": "firstName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "userReciver",
+            "otherEntityName": "user",
+            "otherEntityField": "firstName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "message",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subject",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "msgDateTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20170903013522",
+    "entityTableName": "message",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass"
+}

@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable } from 'rxjs/Rx';
-import { JhiLanguageHelper } from '../../../../../../main/webapp/app/shared';
 import { WegoTestModule } from '../../../test.module';
 import { Principal, AccountService } from '../../../../../../main/webapp/app/shared';
 import { SettingsComponent } from '../../../../../../main/webapp/app/account/settings/settings.component';
@@ -29,10 +28,6 @@ describe('Component Tests', () => {
                         provide: AccountService,
                         useClass: MockAccountService
                     },
-                    {
-                        provide: JhiLanguageHelper,
-                        useValue: null
-                    },
                 ]
             }).overrideTemplate(SettingsComponent, '')
             .compileComponents();
@@ -53,7 +48,7 @@ describe('Component Tests', () => {
 
                 activated: true,
                 email: 'john.doe@mail.com',
-                langKey: 'nl',
+                langKey: 'en',
                 login: 'john'
             };
             mockPrincipal.setResponse(accountValues);
