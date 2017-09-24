@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.Rating;
 import network.wego.domain.Driver;
@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see RatingResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class RatingResourceIntTest {
 
     private static final Boolean DEFAULT_STATUS = false;

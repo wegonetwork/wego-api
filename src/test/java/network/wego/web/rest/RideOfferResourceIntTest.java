@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.RideOffer;
 import network.wego.domain.Driver;
@@ -38,7 +38,7 @@ import network.wego.domain.enumeration.RideStatus;
  * @see RideOfferResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class RideOfferResourceIntTest {
 
     private static final RideStatus DEFAULT_STATUS = RideStatus.CANCLED;

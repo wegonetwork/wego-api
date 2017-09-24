@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.Message;
 import network.wego.domain.User;
@@ -39,7 +39,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see MessageResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class MessageResourceIntTest {
 
     private static final String DEFAULT_MESSAGE = "AAAAAAAAAA";

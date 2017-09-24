@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.Vehcile;
 import network.wego.domain.User;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see VehcileResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class VehcileResourceIntTest {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";

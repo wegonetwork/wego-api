@@ -5,7 +5,7 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { JhiDateUtils, JhiDataUtils, JhiEventManager } from 'ng-jhipster';
-import { WegoTestModule } from '../../../test.module';
+import { JhipsterTestModule } from '../../../test.module';
 import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { RideRequestDetailComponent } from '../../../../../../main/webapp/app/entities/ride-request/ride-request-detail.component';
 import { RideRequestService } from '../../../../../../main/webapp/app/entities/ride-request/ride-request.service';
@@ -20,7 +20,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [WegoTestModule],
+                imports: [JhipsterTestModule],
                 declarations: [RideRequestDetailComponent],
                 providers: [
                     JhiDateUtils,

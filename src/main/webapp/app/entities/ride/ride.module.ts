@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { WegoSharedModule } from '../../shared';
+import { JhipsterSharedModule } from '../../shared';
 import {
     RideService,
     RidePopupService,
@@ -23,7 +23,7 @@ const ENTITY_STATES = [
 
 @NgModule({
     imports: [
-        WegoSharedModule,
+        JhipsterSharedModule,
         RouterModule.forRoot(ENTITY_STATES, { useHash: true })
     ],
     declarations: [
@@ -48,4 +48,4 @@ const ENTITY_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class WegoRideModule {}
+export class JhipsterRideModule {}

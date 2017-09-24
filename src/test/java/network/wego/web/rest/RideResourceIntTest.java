@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.Ride;
 import network.wego.domain.Vehcile;
@@ -41,7 +41,7 @@ import network.wego.domain.enumeration.RideStatus;
  * @see RideResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class RideResourceIntTest {
 
     private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";

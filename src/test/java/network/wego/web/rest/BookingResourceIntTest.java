@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.Booking;
 import network.wego.domain.Ride;
@@ -38,7 +38,7 @@ import network.wego.domain.enumeration.BookingStatus;
  * @see BookingResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class BookingResourceIntTest {
 
     private static final BookingStatus DEFAULT_STATUS = BookingStatus.CANCLED;

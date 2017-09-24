@@ -1,7 +1,5 @@
 package network.wego.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -15,7 +13,6 @@ import network.wego.domain.enumeration.RideStatus;
  */
 @Entity
 @Table(name = "ride_offer")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class RideOffer implements Serializable {
 
     private static final long serialVersionUID = 1L;

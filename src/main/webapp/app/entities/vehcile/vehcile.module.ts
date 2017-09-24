@@ -1,8 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { WegoSharedModule } from '../../shared';
-import { WegoAdminModule } from '../../admin/admin.module';
+import { JhipsterSharedModule } from '../../shared';
+import { JhipsterAdminModule } from '../../admin/admin.module';
 import {
     VehcileService,
     VehcilePopupService,
@@ -24,8 +24,8 @@ const ENTITY_STATES = [
 
 @NgModule({
     imports: [
-        WegoSharedModule,
-        WegoAdminModule,
+        JhipsterSharedModule,
+        JhipsterAdminModule,
         RouterModule.forRoot(ENTITY_STATES, { useHash: true })
     ],
     declarations: [
@@ -50,4 +50,4 @@ const ENTITY_STATES = [
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class WegoVehcileModule {}
+export class JhipsterVehcileModule {}
