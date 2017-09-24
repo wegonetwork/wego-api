@@ -1,0 +1,17 @@
+package: github.com/tendermint/ethermint
+import:
+- package: github.com/tendermint/tendermint
+  version: 0.10.x
+- package: github.com/tendermint/tmlibs
+  version: 0.2.x
+- package: github.com/tendermint/abci
+  version: 0.5.x
+- package: github.com/ethereum/go-ethereum
+  version: 7db2143396f73f418b50dc5571fec2c62c78b7e4
+  repo: https://github.com/tendermint/go-ethereum.git
+- package: github.com/spf13/pflag
+  version: master
+- package: gopkg.in/urfave/cli.v1
+  version: 1.x
+- package: github.com/mattn/go-colorable
+  version: 0.x

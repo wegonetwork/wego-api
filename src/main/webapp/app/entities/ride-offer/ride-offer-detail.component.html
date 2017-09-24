@@ -1,0 +1,37 @@
+
+<div *ngIf="rideOffer">
+    <h2><span>Ride Offer</span> {{rideOffer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{rideOffer.status}}</span>
+        </dd>
+        <dt><span>Driver</span></dt>
+        <dd>
+            <div *ngIf="rideOffer.driver">
+                <a [routerLink]="['/driver', rideOffer.driver?.id]">{{rideOffer.driver?.fullName}}</a>
+            </div>
+        </dd>
+        <dt><span>Ride</span></dt>
+        <dd>
+            <div *ngIf="rideOffer.ride">
+                <a [routerLink]="['/ride', rideOffer.ride?.id]">{{rideOffer.ride?.destination}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'ride-offer/'+ rideOffer.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,41 @@
+
+<div *ngIf="message">
+    <h2><span>Message</span> {{message.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Message</span></dt>
+        <dd>
+            <span>{{message.message}}</span>
+        </dd>
+        <dt><span>Subject</span></dt>
+        <dd>
+            <span>{{message.subject}}</span>
+        </dd>
+        <dt><span>Msg Date Time</span></dt>
+        <dd>
+            <span>{{message.msgDateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span>User Sender</span></dt>
+        <dd>
+            {{message.userSender?.firstName}}
+        </dd>
+        <dt><span>User Reciver</span></dt>
+        <dd>
+            {{message.userReciver?.firstName}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'message/'+ message.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
