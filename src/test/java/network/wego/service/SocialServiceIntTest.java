@@ -1,6 +1,6 @@
 package network.wego.service;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 import network.wego.domain.Authority;
 import network.wego.domain.User;
 import network.wego.repository.AuthorityRepository;
@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 @Transactional
 public class SocialServiceIntTest {
 

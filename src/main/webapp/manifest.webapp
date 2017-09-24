@@ -1,6 +1,6 @@
 {
-  "name": "Wego",
-  "short_name": "Wego",
+  "name": "Jhipster",
+  "short_name": "Jhipster",
   "icons": [
       {
           "src": "./content/images/logo-jhipster.png",

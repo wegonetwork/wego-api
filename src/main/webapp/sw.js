@@ -1,5 +1,5 @@
-var dataCacheName = 'Wego-v1';
-var cacheName = 'Wego-1';
+var dataCacheName = 'Jhipster-v1';
+var cacheName = 'Jhipster-1';
 var filesToCache = [
     '/',
     '/index.html'

@@ -16,14 +16,14 @@
 
 spring:
     application:
-        name: wego
+        name: jhipster
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
         type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:wego;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:jhipster;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -88,7 +88,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: ccdbaf5f87a8c2784784894c115cff117cec3ba2
+                secret: 8aa3b21392791c5ba5e827681d904e847c038321
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

@@ -1,14 +1,14 @@
 version: '2'
 services:
-    wego-app:
-        image: wego
+    jhipster-app:
+        image: jhipster
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
-            - SPRING_DATASOURCE_URL=jdbc:mysql://wego-mysql:3306/wego?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATASOURCE_URL=jdbc:mysql://jhipster-mysql:3306/jhipster?useUnicode=true&characterEncoding=utf8&useSSL=false
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
             - 8080:8080
-    wego-mysql:
+    jhipster-mysql:
         extends:
             file: mysql.yml
-            service: wego-mysql
+            service: jhipster-mysql

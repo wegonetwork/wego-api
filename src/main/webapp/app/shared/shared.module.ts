@@ -2,8 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    WegoSharedLibsModule,
-    WegoSharedCommonModule,
+    JhipsterSharedLibsModule,
+    JhipsterSharedCommonModule,
     CSRFService,
     AuthServerProvider,
     AccountService,
@@ -20,8 +20,8 @@ import {
 
 @NgModule({
     imports: [
-        WegoSharedLibsModule,
-        WegoSharedCommonModule
+        JhipsterSharedLibsModule,
+        JhipsterSharedCommonModule
     ],
     declarations: [
         JhiSocialComponent,
@@ -42,7 +42,7 @@ import {
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
-        WegoSharedCommonModule,
+        JhipsterSharedCommonModule,
         JhiSocialComponent,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
@@ -51,4 +51,4 @@ import {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class WegoSharedModule {}
+export class JhipsterSharedModule {}

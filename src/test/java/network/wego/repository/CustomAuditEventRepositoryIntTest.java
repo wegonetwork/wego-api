@@ -1,6 +1,6 @@
 package network.wego.repository;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 import network.wego.config.Constants;
 import network.wego.config.audit.AuditEventConverter;
 import network.wego.domain.PersistentAuditEvent;
@@ -31,7 +31,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see CustomAuditEventRepository
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIntTest {
 
