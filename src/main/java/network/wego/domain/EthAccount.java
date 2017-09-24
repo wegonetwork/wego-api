@@ -1,7 +1,5 @@
 package network.wego.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,7 +10,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "eth_account")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EthAccount implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,8 +18,11 @@ public class EthAccount implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "ethaccount")
-    private String ethaccount;
+    @Column(name = "jhi_account")
+    private String account;
+
+    @Column(name = "jhi_date")
+    private String date;
 
     public Long getId() {
         return id;
@@ -32,17 +32,30 @@ public class EthAccount implements Serializable {
         this.id = id;
     }
 
-    public String getEthaccount() {
-        return ethaccount;
+    public String getAccount() {
+        return account;
     }
 
-    public EthAccount ethaccount(String ethaccount) {
-        this.ethaccount = ethaccount;
+    public EthAccount account(String account) {
+        this.account = account;
         return this;
     }
 
-    public void setEthaccount(String ethaccount) {
-        this.ethaccount = ethaccount;
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public EthAccount date(String date) {
+        this.date = date;
+        return this;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override
@@ -69,7 +82,8 @@ public class EthAccount implements Serializable {
     public String toString() {
         return "EthAccount{" +
             "id=" + getId() +
-            ", ethaccount='" + getEthaccount() + "'" +
+            ", account='" + getAccount() + "'" +
+            ", date='" + getDate() + "'" +
             "}";
     }
 }

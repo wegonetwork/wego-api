@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.WegoApp;
+import network.wego.JhipsterApp;
 
 import network.wego.domain.EthAccount;
 import network.wego.repository.EthAccountRepository;
@@ -35,11 +35,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see EthAccountResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WegoApp.class)
+@SpringBootTest(classes = JhipsterApp.class)
 public class EthAccountResourceIntTest {
 
-    private static final String DEFAULT_ETHACCOUNT = "AAAAAAAAAA";
-    private static final String UPDATED_ETHACCOUNT = "BBBBBBBBBB";
+    private static final String DEFAULT_ACCOUNT = "AAAAAAAAAA";
+    private static final String UPDATED_ACCOUNT = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DATE = "AAAAAAAAAA";
+    private static final String UPDATED_DATE = "BBBBBBBBBB";
 
     @Autowired
     private EthAccountRepository ethAccountRepository;
@@ -81,7 +84,8 @@ public class EthAccountResourceIntTest {
      */
     public static EthAccount createEntity(EntityManager em) {
         EthAccount ethAccount = new EthAccount()
-            .ethaccount(DEFAULT_ETHACCOUNT);
+            .account(DEFAULT_ACCOUNT)
+            .date(DEFAULT_DATE);
         return ethAccount;
     }
 
@@ -105,7 +109,8 @@ public class EthAccountResourceIntTest {
         List<EthAccount> ethAccountList = ethAccountRepository.findAll();
         assertThat(ethAccountList).hasSize(databaseSizeBeforeCreate + 1);
         EthAccount testEthAccount = ethAccountList.get(ethAccountList.size() - 1);
-        assertThat(testEthAccount.getEthaccount()).isEqualTo(DEFAULT_ETHACCOUNT);
+        assertThat(testEthAccount.getAccount()).isEqualTo(DEFAULT_ACCOUNT);
+        assertThat(testEthAccount.getDate()).isEqualTo(DEFAULT_DATE);
     }
 
     @Test
@@ -138,7 +143,8 @@ public class EthAccountResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(ethAccount.getId().intValue())))
-            .andExpect(jsonPath("$.[*].ethaccount").value(hasItem(DEFAULT_ETHACCOUNT.toString())));
+            .andExpect(jsonPath("$.[*].account").value(hasItem(DEFAULT_ACCOUNT.toString())))
+            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
 
     @Test
@@ -152,7 +158,8 @@ public class EthAccountResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(ethAccount.getId().intValue()))
-            .andExpect(jsonPath("$.ethaccount").value(DEFAULT_ETHACCOUNT.toString()));
+            .andExpect(jsonPath("$.account").value(DEFAULT_ACCOUNT.toString()))
+            .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()));
     }
 
     @Test
@@ -174,7 +181,8 @@ public class EthAccountResourceIntTest {
         // Update the ethAccount
         EthAccount updatedEthAccount = ethAccountRepository.findOne(ethAccount.getId());
         updatedEthAccount
-            .ethaccount(UPDATED_ETHACCOUNT);
+            .account(UPDATED_ACCOUNT)
+            .date(UPDATED_DATE);
 
         restEthAccountMockMvc.perform(put("/api/eth-accounts")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -185,7 +193,8 @@ public class EthAccountResourceIntTest {
         List<EthAccount> ethAccountList = ethAccountRepository.findAll();
         assertThat(ethAccountList).hasSize(databaseSizeBeforeUpdate);
         EthAccount testEthAccount = ethAccountList.get(ethAccountList.size() - 1);
-        assertThat(testEthAccount.getEthaccount()).isEqualTo(UPDATED_ETHACCOUNT);
+        assertThat(testEthAccount.getAccount()).isEqualTo(UPDATED_ACCOUNT);
+        assertThat(testEthAccount.getDate()).isEqualTo(UPDATED_DATE);
     }
 
     @Test
