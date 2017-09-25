@@ -17,6 +17,7 @@
     <include file="config/liquibase/changelog/20170924035642_added_entity_Country.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170924035643_added_entity_City.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170924041645_added_entity_EthAccount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170925025748_added_entity_Location.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20170924035633_added_entity_constraints_Ride.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170924035634_added_entity_constraints_RideOffer.xml" relativeToChangelogFile="false"/>

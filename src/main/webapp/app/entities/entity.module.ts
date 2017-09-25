@@ -12,6 +12,7 @@ import { JhipsterPassengerModule } from './passenger/passenger.module';
 import { JhipsterCountryModule } from './country/country.module';
 import { JhipsterCityModule } from './city/city.module';
 import { JhipsterEthAccountModule } from './eth-account/eth-account.module';
+import { JhipsterLocationModule } from './location/location.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -28,6 +29,7 @@ import { JhipsterEthAccountModule } from './eth-account/eth-account.module';
         JhipsterCountryModule,
         JhipsterCityModule,
         JhipsterEthAccountModule,
+        JhipsterLocationModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

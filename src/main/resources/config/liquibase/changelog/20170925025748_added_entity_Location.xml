@@ -15,39 +15,19 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity Vehcile.
+        Added the entity Location.
     -->
-    <changeSet id="20170924035636-1" author="jhipster">
-        <createTable tableName="vehcile">
+    <changeSet id="20170925025748-1" author="jhipster">
+        <createTable tableName="location">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="altitude" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="model" type="varchar(255)">
+            <column name="latitude" type="varchar(255)">
                 <constraints nullable="true" />
-            </column>
-
-            <column name="company" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="jhi_number" type="integer">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="seats_number" type="integer">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="car_image_url" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="user_id" type="bigint">
-                <constraints nullable="false" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
