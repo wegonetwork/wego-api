@@ -8,7 +8,7 @@ export class Vehcile implements BaseEntity {
         public company?: string,
         public number?: number,
         public color?: string,
-        public noSeats?: number,
+        public seatsNumber?: number,
         public carImageURL?: string,
         public user?: User,
     ) {

@@ -47,35 +47,32 @@ public class RideResourceIntTest {
     private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";
     private static final String UPDATED_ADDRESS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_DESTINATION = "AAAAAAAAAA";
-    private static final String UPDATED_DESTINATION = "BBBBBBBBBB";
-
     private static final String DEFAULT_MAP_POINT = "AAAAAAAAAA";
     private static final String UPDATED_MAP_POINT = "BBBBBBBBBB";
-
-    private static final Instant DEFAULT_RIDE_DATE_TIME = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_RIDE_DATE_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     private static final String DEFAULT_FREQUANCY = "AAAAAAAAAA";
     private static final String UPDATED_FREQUANCY = "BBBBBBBBBB";
 
-    private static final Gender DEFAULT_SEAT_GENDER = Gender.MALE;
-    private static final Gender UPDATED_SEAT_GENDER = Gender.FEMALE;
+    private static final String DEFAULT_DESTINATION = "AAAAAAAAAA";
+    private static final String UPDATED_DESTINATION = "BBBBBBBBBB";
 
     private static final Integer DEFAULT_SEAT_AGE = 1;
     private static final Integer UPDATED_SEAT_AGE = 2;
+
+    private static final Long DEFAULT_MOBILE_NUMBER = 1L;
+    private static final Long UPDATED_MOBILE_NUMBER = 2L;
+
+    private static final Gender DEFAULT_SEAT_GENDER = Gender.MALE;
+    private static final Gender UPDATED_SEAT_GENDER = Gender.FEMALE;
+
+    private static final Instant DEFAULT_RIDE_DATE_TIME = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_RIDE_DATE_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     private static final Boolean DEFAULT_SMOKING = false;
     private static final Boolean UPDATED_SMOKING = true;
 
     private static final Double DEFAULT_PRICE = 1D;
     private static final Double UPDATED_PRICE = 2D;
-
-    private static final String DEFAULT_LUGGAGE = "AAAAAAAAAA";
-    private static final String UPDATED_LUGGAGE = "BBBBBBBBBB";
-
-    private static final Long DEFAULT_MOBILE_NUMBER = 1L;
-    private static final Long UPDATED_MOBILE_NUMBER = 2L;
 
     private static final String DEFAULT_COMMENT = "AAAAAAAAAA";
     private static final String UPDATED_COMMENT = "BBBBBBBBBB";
@@ -124,16 +121,15 @@ public class RideResourceIntTest {
     public static Ride createEntity(EntityManager em) {
         Ride ride = new Ride()
             .address(DEFAULT_ADDRESS)
-            .destination(DEFAULT_DESTINATION)
             .mapPoint(DEFAULT_MAP_POINT)
-            .rideDateTime(DEFAULT_RIDE_DATE_TIME)
             .frequancy(DEFAULT_FREQUANCY)
-            .seatGender(DEFAULT_SEAT_GENDER)
+            .destination(DEFAULT_DESTINATION)
             .seatAge(DEFAULT_SEAT_AGE)
+            .mobileNumber(DEFAULT_MOBILE_NUMBER)
+            .seatGender(DEFAULT_SEAT_GENDER)
+            .rideDateTime(DEFAULT_RIDE_DATE_TIME)
             .smoking(DEFAULT_SMOKING)
             .price(DEFAULT_PRICE)
-            .luggage(DEFAULT_LUGGAGE)
-            .mobileNumber(DEFAULT_MOBILE_NUMBER)
             .comment(DEFAULT_COMMENT)
             .status(DEFAULT_STATUS);
         // Add required entity
@@ -170,16 +166,15 @@ public class RideResourceIntTest {
         assertThat(rideList).hasSize(databaseSizeBeforeCreate + 1);
         Ride testRide = rideList.get(rideList.size() - 1);
         assertThat(testRide.getAddress()).isEqualTo(DEFAULT_ADDRESS);
-        assertThat(testRide.getDestination()).isEqualTo(DEFAULT_DESTINATION);
         assertThat(testRide.getMapPoint()).isEqualTo(DEFAULT_MAP_POINT);
-        assertThat(testRide.getRideDateTime()).isEqualTo(DEFAULT_RIDE_DATE_TIME);
         assertThat(testRide.getFrequancy()).isEqualTo(DEFAULT_FREQUANCY);
-        assertThat(testRide.getSeatGender()).isEqualTo(DEFAULT_SEAT_GENDER);
+        assertThat(testRide.getDestination()).isEqualTo(DEFAULT_DESTINATION);
         assertThat(testRide.getSeatAge()).isEqualTo(DEFAULT_SEAT_AGE);
+        assertThat(testRide.getMobileNumber()).isEqualTo(DEFAULT_MOBILE_NUMBER);
+        assertThat(testRide.getSeatGender()).isEqualTo(DEFAULT_SEAT_GENDER);
+        assertThat(testRide.getRideDateTime()).isEqualTo(DEFAULT_RIDE_DATE_TIME);
         assertThat(testRide.isSmoking()).isEqualTo(DEFAULT_SMOKING);
         assertThat(testRide.getPrice()).isEqualTo(DEFAULT_PRICE);
-        assertThat(testRide.getLuggage()).isEqualTo(DEFAULT_LUGGAGE);
-        assertThat(testRide.getMobileNumber()).isEqualTo(DEFAULT_MOBILE_NUMBER);
         assertThat(testRide.getComment()).isEqualTo(DEFAULT_COMMENT);
         assertThat(testRide.getStatus()).isEqualTo(DEFAULT_STATUS);
     }
@@ -215,16 +210,15 @@ public class RideResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(ride.getId().intValue())))
             .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS.toString())))
-            .andExpect(jsonPath("$.[*].destination").value(hasItem(DEFAULT_DESTINATION.toString())))
             .andExpect(jsonPath("$.[*].mapPoint").value(hasItem(DEFAULT_MAP_POINT.toString())))
-            .andExpect(jsonPath("$.[*].rideDateTime").value(hasItem(DEFAULT_RIDE_DATE_TIME.toString())))
             .andExpect(jsonPath("$.[*].frequancy").value(hasItem(DEFAULT_FREQUANCY.toString())))
-            .andExpect(jsonPath("$.[*].seatGender").value(hasItem(DEFAULT_SEAT_GENDER.toString())))
+            .andExpect(jsonPath("$.[*].destination").value(hasItem(DEFAULT_DESTINATION.toString())))
             .andExpect(jsonPath("$.[*].seatAge").value(hasItem(DEFAULT_SEAT_AGE)))
+            .andExpect(jsonPath("$.[*].mobileNumber").value(hasItem(DEFAULT_MOBILE_NUMBER.intValue())))
+            .andExpect(jsonPath("$.[*].seatGender").value(hasItem(DEFAULT_SEAT_GENDER.toString())))
+            .andExpect(jsonPath("$.[*].rideDateTime").value(hasItem(DEFAULT_RIDE_DATE_TIME.toString())))
             .andExpect(jsonPath("$.[*].smoking").value(hasItem(DEFAULT_SMOKING.booleanValue())))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())))
-            .andExpect(jsonPath("$.[*].luggage").value(hasItem(DEFAULT_LUGGAGE.toString())))
-            .andExpect(jsonPath("$.[*].mobileNumber").value(hasItem(DEFAULT_MOBILE_NUMBER.intValue())))
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
@@ -241,16 +235,15 @@ public class RideResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(ride.getId().intValue()))
             .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS.toString()))
-            .andExpect(jsonPath("$.destination").value(DEFAULT_DESTINATION.toString()))
             .andExpect(jsonPath("$.mapPoint").value(DEFAULT_MAP_POINT.toString()))
-            .andExpect(jsonPath("$.rideDateTime").value(DEFAULT_RIDE_DATE_TIME.toString()))
             .andExpect(jsonPath("$.frequancy").value(DEFAULT_FREQUANCY.toString()))
-            .andExpect(jsonPath("$.seatGender").value(DEFAULT_SEAT_GENDER.toString()))
+            .andExpect(jsonPath("$.destination").value(DEFAULT_DESTINATION.toString()))
             .andExpect(jsonPath("$.seatAge").value(DEFAULT_SEAT_AGE))
+            .andExpect(jsonPath("$.mobileNumber").value(DEFAULT_MOBILE_NUMBER.intValue()))
+            .andExpect(jsonPath("$.seatGender").value(DEFAULT_SEAT_GENDER.toString()))
+            .andExpect(jsonPath("$.rideDateTime").value(DEFAULT_RIDE_DATE_TIME.toString()))
             .andExpect(jsonPath("$.smoking").value(DEFAULT_SMOKING.booleanValue()))
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.doubleValue()))
-            .andExpect(jsonPath("$.luggage").value(DEFAULT_LUGGAGE.toString()))
-            .andExpect(jsonPath("$.mobileNumber").value(DEFAULT_MOBILE_NUMBER.intValue()))
             .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
@@ -275,16 +268,15 @@ public class RideResourceIntTest {
         Ride updatedRide = rideRepository.findOne(ride.getId());
         updatedRide
             .address(UPDATED_ADDRESS)
-            .destination(UPDATED_DESTINATION)
             .mapPoint(UPDATED_MAP_POINT)
-            .rideDateTime(UPDATED_RIDE_DATE_TIME)
             .frequancy(UPDATED_FREQUANCY)
-            .seatGender(UPDATED_SEAT_GENDER)
+            .destination(UPDATED_DESTINATION)
             .seatAge(UPDATED_SEAT_AGE)
+            .mobileNumber(UPDATED_MOBILE_NUMBER)
+            .seatGender(UPDATED_SEAT_GENDER)
+            .rideDateTime(UPDATED_RIDE_DATE_TIME)
             .smoking(UPDATED_SMOKING)
             .price(UPDATED_PRICE)
-            .luggage(UPDATED_LUGGAGE)
-            .mobileNumber(UPDATED_MOBILE_NUMBER)
             .comment(UPDATED_COMMENT)
             .status(UPDATED_STATUS);
 
@@ -298,16 +290,15 @@ public class RideResourceIntTest {
         assertThat(rideList).hasSize(databaseSizeBeforeUpdate);
         Ride testRide = rideList.get(rideList.size() - 1);
         assertThat(testRide.getAddress()).isEqualTo(UPDATED_ADDRESS);
-        assertThat(testRide.getDestination()).isEqualTo(UPDATED_DESTINATION);
         assertThat(testRide.getMapPoint()).isEqualTo(UPDATED_MAP_POINT);
-        assertThat(testRide.getRideDateTime()).isEqualTo(UPDATED_RIDE_DATE_TIME);
         assertThat(testRide.getFrequancy()).isEqualTo(UPDATED_FREQUANCY);
-        assertThat(testRide.getSeatGender()).isEqualTo(UPDATED_SEAT_GENDER);
+        assertThat(testRide.getDestination()).isEqualTo(UPDATED_DESTINATION);
         assertThat(testRide.getSeatAge()).isEqualTo(UPDATED_SEAT_AGE);
+        assertThat(testRide.getMobileNumber()).isEqualTo(UPDATED_MOBILE_NUMBER);
+        assertThat(testRide.getSeatGender()).isEqualTo(UPDATED_SEAT_GENDER);
+        assertThat(testRide.getRideDateTime()).isEqualTo(UPDATED_RIDE_DATE_TIME);
         assertThat(testRide.isSmoking()).isEqualTo(UPDATED_SMOKING);
         assertThat(testRide.getPrice()).isEqualTo(UPDATED_PRICE);
-        assertThat(testRide.getLuggage()).isEqualTo(UPDATED_LUGGAGE);
-        assertThat(testRide.getMobileNumber()).isEqualTo(UPDATED_MOBILE_NUMBER);
         assertThat(testRide.getComment()).isEqualTo(UPDATED_COMMENT);
         assertThat(testRide.getStatus()).isEqualTo(UPDATED_STATUS);
     }

@@ -27,36 +27,33 @@ public class Ride implements Serializable {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "destination")
-    private String destination;
-
     @Column(name = "map_point")
     private String mapPoint;
 
-    @Column(name = "ride_date_time")
-    private Instant rideDateTime;
-
     @Column(name = "frequancy")
     private String frequancy;
+
+    @Column(name = "destination")
+    private String destination;
+
+    @Column(name = "seat_age")
+    private Integer seatAge;
+
+    @Column(name = "mobile_number")
+    private Long mobileNumber;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "seat_gender")
     private Gender seatGender;
 
-    @Column(name = "seat_age")
-    private Integer seatAge;
+    @Column(name = "ride_date_time")
+    private Instant rideDateTime;
 
     @Column(name = "smoking")
     private Boolean smoking;
 
     @Column(name = "price")
     private Double price;
-
-    @Column(name = "luggage")
-    private String luggage;
-
-    @Column(name = "mobile_number")
-    private Long mobileNumber;
 
     @Column(name = "jhi_comment")
     private String comment;
@@ -94,19 +91,6 @@ public class Ride implements Serializable {
         this.address = address;
     }
 
-    public String getDestination() {
-        return destination;
-    }
-
-    public Ride destination(String destination) {
-        this.destination = destination;
-        return this;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
     public String getMapPoint() {
         return mapPoint;
     }
@@ -118,19 +102,6 @@ public class Ride implements Serializable {
 
     public void setMapPoint(String mapPoint) {
         this.mapPoint = mapPoint;
-    }
-
-    public Instant getRideDateTime() {
-        return rideDateTime;
-    }
-
-    public Ride rideDateTime(Instant rideDateTime) {
-        this.rideDateTime = rideDateTime;
-        return this;
-    }
-
-    public void setRideDateTime(Instant rideDateTime) {
-        this.rideDateTime = rideDateTime;
     }
 
     public String getFrequancy() {
@@ -146,17 +117,17 @@ public class Ride implements Serializable {
         this.frequancy = frequancy;
     }
 
-    public Gender getSeatGender() {
-        return seatGender;
+    public String getDestination() {
+        return destination;
     }
 
-    public Ride seatGender(Gender seatGender) {
-        this.seatGender = seatGender;
+    public Ride destination(String destination) {
+        this.destination = destination;
         return this;
     }
 
-    public void setSeatGender(Gender seatGender) {
-        this.seatGender = seatGender;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public Integer getSeatAge() {
@@ -170,6 +141,45 @@ public class Ride implements Serializable {
 
     public void setSeatAge(Integer seatAge) {
         this.seatAge = seatAge;
+    }
+
+    public Long getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public Ride mobileNumber(Long mobileNumber) {
+        this.mobileNumber = mobileNumber;
+        return this;
+    }
+
+    public void setMobileNumber(Long mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public Gender getSeatGender() {
+        return seatGender;
+    }
+
+    public Ride seatGender(Gender seatGender) {
+        this.seatGender = seatGender;
+        return this;
+    }
+
+    public void setSeatGender(Gender seatGender) {
+        this.seatGender = seatGender;
+    }
+
+    public Instant getRideDateTime() {
+        return rideDateTime;
+    }
+
+    public Ride rideDateTime(Instant rideDateTime) {
+        this.rideDateTime = rideDateTime;
+        return this;
+    }
+
+    public void setRideDateTime(Instant rideDateTime) {
+        this.rideDateTime = rideDateTime;
     }
 
     public Boolean isSmoking() {
@@ -196,32 +206,6 @@ public class Ride implements Serializable {
 
     public void setPrice(Double price) {
         this.price = price;
-    }
-
-    public String getLuggage() {
-        return luggage;
-    }
-
-    public Ride luggage(String luggage) {
-        this.luggage = luggage;
-        return this;
-    }
-
-    public void setLuggage(String luggage) {
-        this.luggage = luggage;
-    }
-
-    public Long getMobileNumber() {
-        return mobileNumber;
-    }
-
-    public Ride mobileNumber(Long mobileNumber) {
-        this.mobileNumber = mobileNumber;
-        return this;
-    }
-
-    public void setMobileNumber(Long mobileNumber) {
-        this.mobileNumber = mobileNumber;
     }
 
     public String getComment() {
@@ -301,16 +285,15 @@ public class Ride implements Serializable {
         return "Ride{" +
             "id=" + getId() +
             ", address='" + getAddress() + "'" +
-            ", destination='" + getDestination() + "'" +
             ", mapPoint='" + getMapPoint() + "'" +
-            ", rideDateTime='" + getRideDateTime() + "'" +
             ", frequancy='" + getFrequancy() + "'" +
-            ", seatGender='" + getSeatGender() + "'" +
+            ", destination='" + getDestination() + "'" +
             ", seatAge='" + getSeatAge() + "'" +
+            ", mobileNumber='" + getMobileNumber() + "'" +
+            ", seatGender='" + getSeatGender() + "'" +
+            ", rideDateTime='" + getRideDateTime() + "'" +
             ", smoking='" + isSmoking() + "'" +
             ", price='" + getPrice() + "'" +
-            ", luggage='" + getLuggage() + "'" +
-            ", mobileNumber='" + getMobileNumber() + "'" +
             ", comment='" + getComment() + "'" +
             ", status='" + getStatus() + "'" +
             "}";

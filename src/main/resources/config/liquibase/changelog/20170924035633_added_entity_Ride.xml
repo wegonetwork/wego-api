@@ -26,15 +26,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="destination" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
             <column name="map_point" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="ride_date_time" type="timestamp">
                 <constraints nullable="true" />
             </column>
 
@@ -42,11 +34,23 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="seat_gender" type="varchar(255)">
+            <column name="destination" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
             <column name="seat_age" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mobile_number" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="seat_gender" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ride_date_time" type="timestamp">
                 <constraints nullable="true" />
             </column>
 
@@ -55,14 +59,6 @@
             </column>
 
             <column name="price" type="double">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="luggage" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="mobile_number" type="bigint">
                 <constraints nullable="true" />
             </column>
 

@@ -18,16 +18,15 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="address"><span>Address</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="destination"><span>Destination</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="mapPoint"><span>Map Point</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="rideDateTime"><span>Ride Date Time</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="frequancy"><span>Frequancy</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="seatGender"><span>Seat Gender</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="destination"><span>Destination</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="seatAge"><span>Seat Age</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mobileNumber"><span>Mobile Number</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="seatGender"><span>Seat Gender</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rideDateTime"><span>Ride Date Time</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="smoking"><span>Smoking</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="price"><span>Price</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="luggage"><span>Luggage</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="mobileNumber"><span>Mobile Number</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="comment"><span>Comment</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="status"><span>Status</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="vehcile.name"><span>Vehcile</span> <span class="fa fa-sort"></span></th>
@@ -39,16 +38,15 @@
             <tr *ngFor="let ride of rides ;trackBy: trackId">
                 <td><a [routerLink]="['../ride', ride.id ]">{{ride.id}}</a></td>
                 <td>{{ride.address}}</td>
-                <td>{{ride.destination}}</td>
                 <td>{{ride.mapPoint}}</td>
-                <td>{{ride.rideDateTime | date:'medium'}}</td>
                 <td>{{ride.frequancy}}</td>
-                <td>{{ride.seatGender}}</td>
+                <td>{{ride.destination}}</td>
                 <td>{{ride.seatAge}}</td>
+                <td>{{ride.mobileNumber}}</td>
+                <td>{{ride.seatGender}}</td>
+                <td>{{ride.rideDateTime | date:'medium'}}</td>
                 <td>{{ride.smoking}}</td>
                 <td>{{ride.price}}</td>
-                <td>{{ride.luggage}}</td>
-                <td>{{ride.mobileNumber}}</td>
                 <td>{{ride.comment}}</td>
                 <td>{{ride.status}}</td>
                 <td>

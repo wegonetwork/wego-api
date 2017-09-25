@@ -34,8 +34,8 @@ public class Vehcile implements Serializable {
     @Column(name = "color")
     private String color;
 
-    @Column(name = "no_seats")
-    private Integer noSeats;
+    @Column(name = "seats_number")
+    private Integer seatsNumber;
 
     @Column(name = "car_image_url")
     private String carImageURL;
@@ -117,17 +117,17 @@ public class Vehcile implements Serializable {
         this.color = color;
     }
 
-    public Integer getNoSeats() {
-        return noSeats;
+    public Integer getSeatsNumber() {
+        return seatsNumber;
     }
 
-    public Vehcile noSeats(Integer noSeats) {
-        this.noSeats = noSeats;
+    public Vehcile seatsNumber(Integer seatsNumber) {
+        this.seatsNumber = seatsNumber;
         return this;
     }
 
-    public void setNoSeats(Integer noSeats) {
-        this.noSeats = noSeats;
+    public void setSeatsNumber(Integer seatsNumber) {
+        this.seatsNumber = seatsNumber;
     }
 
     public String getCarImageURL() {
@@ -185,7 +185,7 @@ public class Vehcile implements Serializable {
             ", company='" + getCompany() + "'" +
             ", number='" + getNumber() + "'" +
             ", color='" + getColor() + "'" +
-            ", noSeats='" + getNoSeats() + "'" +
+            ", seatsNumber='" + getSeatsNumber() + "'" +
             ", carImageURL='" + getCarImageURL() + "'" +
             "}";
     }

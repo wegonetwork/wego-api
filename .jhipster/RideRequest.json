@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "ride",
+            "otherEntityName": "ride",
+            "otherEntityField": "destination"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "passenger",
+            "otherEntityName": "passenger",
+            "otherEntityField": "fullName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "RideStatus",
+            "fieldValues": "CANCLED,DELAYED,EXPIRED"
+        }
+    ],
+    "changelogDate": "20170924035635",
+    "entityTableName": "ride_request",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass"
+}

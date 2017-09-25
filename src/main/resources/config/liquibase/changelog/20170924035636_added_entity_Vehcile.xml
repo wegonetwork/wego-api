@@ -42,7 +42,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="no_seats" type="integer">
+            <column name="seats_number" type="integer">
                 <constraints nullable="true" />
             </column>
 

@@ -54,8 +54,8 @@ public class VehcileResourceIntTest {
     private static final String DEFAULT_COLOR = "AAAAAAAAAA";
     private static final String UPDATED_COLOR = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_NO_SEATS = 1;
-    private static final Integer UPDATED_NO_SEATS = 2;
+    private static final Integer DEFAULT_SEATS_NUMBER = 1;
+    private static final Integer UPDATED_SEATS_NUMBER = 2;
 
     private static final String DEFAULT_CAR_IMAGE_URL = "AAAAAAAAAA";
     private static final String UPDATED_CAR_IMAGE_URL = "BBBBBBBBBB";
@@ -105,7 +105,7 @@ public class VehcileResourceIntTest {
             .company(DEFAULT_COMPANY)
             .number(DEFAULT_NUMBER)
             .color(DEFAULT_COLOR)
-            .noSeats(DEFAULT_NO_SEATS)
+            .seatsNumber(DEFAULT_SEATS_NUMBER)
             .carImageURL(DEFAULT_CAR_IMAGE_URL);
         // Add required entity
         User user = UserResourceIntTest.createEntity(em);
@@ -140,7 +140,7 @@ public class VehcileResourceIntTest {
         assertThat(testVehcile.getCompany()).isEqualTo(DEFAULT_COMPANY);
         assertThat(testVehcile.getNumber()).isEqualTo(DEFAULT_NUMBER);
         assertThat(testVehcile.getColor()).isEqualTo(DEFAULT_COLOR);
-        assertThat(testVehcile.getNoSeats()).isEqualTo(DEFAULT_NO_SEATS);
+        assertThat(testVehcile.getSeatsNumber()).isEqualTo(DEFAULT_SEATS_NUMBER);
         assertThat(testVehcile.getCarImageURL()).isEqualTo(DEFAULT_CAR_IMAGE_URL);
     }
 
@@ -179,7 +179,7 @@ public class VehcileResourceIntTest {
             .andExpect(jsonPath("$.[*].company").value(hasItem(DEFAULT_COMPANY.toString())))
             .andExpect(jsonPath("$.[*].number").value(hasItem(DEFAULT_NUMBER)))
             .andExpect(jsonPath("$.[*].color").value(hasItem(DEFAULT_COLOR.toString())))
-            .andExpect(jsonPath("$.[*].noSeats").value(hasItem(DEFAULT_NO_SEATS)))
+            .andExpect(jsonPath("$.[*].seatsNumber").value(hasItem(DEFAULT_SEATS_NUMBER)))
             .andExpect(jsonPath("$.[*].carImageURL").value(hasItem(DEFAULT_CAR_IMAGE_URL.toString())));
     }
 
@@ -199,7 +199,7 @@ public class VehcileResourceIntTest {
             .andExpect(jsonPath("$.company").value(DEFAULT_COMPANY.toString()))
             .andExpect(jsonPath("$.number").value(DEFAULT_NUMBER))
             .andExpect(jsonPath("$.color").value(DEFAULT_COLOR.toString()))
-            .andExpect(jsonPath("$.noSeats").value(DEFAULT_NO_SEATS))
+            .andExpect(jsonPath("$.seatsNumber").value(DEFAULT_SEATS_NUMBER))
             .andExpect(jsonPath("$.carImageURL").value(DEFAULT_CAR_IMAGE_URL.toString()));
     }
 
@@ -227,7 +227,7 @@ public class VehcileResourceIntTest {
             .company(UPDATED_COMPANY)
             .number(UPDATED_NUMBER)
             .color(UPDATED_COLOR)
-            .noSeats(UPDATED_NO_SEATS)
+            .seatsNumber(UPDATED_SEATS_NUMBER)
             .carImageURL(UPDATED_CAR_IMAGE_URL);
 
         restVehcileMockMvc.perform(put("/api/vehciles")
@@ -244,7 +244,7 @@ public class VehcileResourceIntTest {
         assertThat(testVehcile.getCompany()).isEqualTo(UPDATED_COMPANY);
         assertThat(testVehcile.getNumber()).isEqualTo(UPDATED_NUMBER);
         assertThat(testVehcile.getColor()).isEqualTo(UPDATED_COLOR);
-        assertThat(testVehcile.getNoSeats()).isEqualTo(UPDATED_NO_SEATS);
+        assertThat(testVehcile.getSeatsNumber()).isEqualTo(UPDATED_SEATS_NUMBER);
         assertThat(testVehcile.getCarImageURL()).isEqualTo(UPDATED_CAR_IMAGE_URL);
     }
 
