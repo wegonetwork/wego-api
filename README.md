@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # wego-api
 Off chain Server
 =======
