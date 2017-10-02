@@ -1,7 +1,7 @@
 package network.wego.web.rest;
 
 import io.github.jhipster.config.JHipsterProperties;
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ProfileInfoResource
  **/
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 public class ProfileInfoResourceIntTest {
 
     @Mock

@@ -41,18 +41,6 @@ public class CacheConfiguration {
             cm.createCache(network.wego.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(network.wego.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(network.wego.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Ride.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.RideOffer.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.EthAccount.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.RideRequest.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Vehcile.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Message.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Rating.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Booking.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Driver.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Passenger.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.Country.class.getName(), jcacheConfiguration);
-            cm.createCache(network.wego.domain.City.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

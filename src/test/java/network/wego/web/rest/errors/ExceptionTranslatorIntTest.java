@@ -1,6 +1,6 @@
 package network.wego.web.rest.errors;
 
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ExceptionTranslator
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 public class ExceptionTranslatorIntTest {
 
     @Autowired

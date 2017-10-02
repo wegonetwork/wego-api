@@ -1,6 +1,6 @@
 package network.wego.repository;
 
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import network.wego.domain.SocialUserConnection;
 
 import org.junit.Before;
@@ -30,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 @Transactional
 public class CustomSocialUsersConnectionRepositoryIntTest {
 

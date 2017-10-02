@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import network.wego.domain.User;
 import network.wego.repository.UserRepository;
 import network.wego.security.jwt.TokenProvider;
@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserJWTController
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 public class UserJWTControllerIntTest {
 
     @Autowired

@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import network.wego.domain.Authority;
 import network.wego.domain.User;
 import network.wego.repository.UserRepository;
@@ -48,7 +48,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 public class UserResourceIntTest {
 
     private static final Long DEFAULT_ID = 1L;

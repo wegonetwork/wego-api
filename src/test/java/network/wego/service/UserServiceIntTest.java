@@ -1,6 +1,6 @@
 package network.wego.service;
 
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import network.wego.domain.User;
 import network.wego.config.Constants;
 import network.wego.repository.UserRepository;
@@ -29,7 +29,7 @@ import static org.assertj.core.api.Assertions.*;
  * @see UserService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 @Transactional
 public class UserServiceIntTest {
 

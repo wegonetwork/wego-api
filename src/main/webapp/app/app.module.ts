@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2Webstorage } from 'ng2-webstorage';
 
-import { JhipsterSharedModule, UserRouteAccessService } from './shared';
-import { JhipsterHomeModule } from './home/home.module';
-import { JhipsterAdminModule } from './admin/admin.module';
-import { JhipsterAccountModule } from './account/account.module';
-import { JhipsterEntityModule } from './entities/entity.module';
+import { WegoSharedModule, UserRouteAccessService } from './shared';
+import { WegoHomeModule } from './home/home.module';
+import { WegoAdminModule } from './admin/admin.module';
+import { WegoAccountModule } from './account/account.module';
+import { WegoEntityModule } from './entities/entity.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -30,11 +30,11 @@ import {
         BrowserModule,
         LayoutRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-        JhipsterSharedModule,
-        JhipsterHomeModule,
-        JhipsterAdminModule,
-        JhipsterAccountModule,
-        JhipsterEntityModule,
+        WegoSharedModule,
+        WegoHomeModule,
+        WegoAdminModule,
+        WegoAccountModule,
+        WegoEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -52,4 +52,4 @@ import {
     ],
     bootstrap: [ JhiMainComponent ]
 })
-export class JhipsterAppModule {}
+export class WegoAppModule {}

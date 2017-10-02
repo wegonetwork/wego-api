@@ -1,5 +1,7 @@
 package network.wego.domain;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,7 +13,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "jhi_social_user_connection")
-
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class SocialUserConnection implements Serializable {
 
     private static final long serialVersionUID = 1L;

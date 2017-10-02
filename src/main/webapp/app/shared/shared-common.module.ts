@@ -2,14 +2,14 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import {
-    JhipsterSharedLibsModule,
+    WegoSharedLibsModule,
     JhiAlertComponent,
     JhiAlertErrorComponent
 } from './';
 
 @NgModule({
     imports: [
-        JhipsterSharedLibsModule
+        WegoSharedLibsModule
     ],
     declarations: [
         JhiAlertComponent,
@@ -23,9 +23,9 @@ import {
         },
     ],
     exports: [
-        JhipsterSharedLibsModule,
+        WegoSharedLibsModule,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]
 })
-export class JhipsterSharedCommonModule {}
+export class WegoSharedCommonModule {}

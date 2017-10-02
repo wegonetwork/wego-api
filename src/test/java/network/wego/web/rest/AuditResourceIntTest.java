@@ -1,6 +1,6 @@
 package network.wego.web.rest;
 
-import network.wego.JhipsterApp;
+import network.wego.WegoApp;
 import network.wego.config.audit.AuditEventConverter;
 import network.wego.domain.PersistentAuditEvent;
 import network.wego.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JhipsterApp.class)
+@SpringBootTest(classes = WegoApp.class)
 @Transactional
 public class AuditResourceIntTest {
 
