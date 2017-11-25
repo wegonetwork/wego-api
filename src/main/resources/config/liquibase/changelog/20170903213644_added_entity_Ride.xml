@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Ride.
+    -->
+    <changeSet id="20170903213644-1" author="jhipster">
+        <createTable tableName="ride">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="destination" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="map_point" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ride_date_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="frequancy" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="seat_gender" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="seat_age" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="smoking" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="price" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="luggage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mobile_number" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jhi_comment" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="vehcile_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="city_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="ride" columnName="ride_date_time" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

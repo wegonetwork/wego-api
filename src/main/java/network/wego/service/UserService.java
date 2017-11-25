@@ -102,6 +102,11 @@ public class UserService {
         newUser.setActivated(false);
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
+        // new user is not active
+        newUser.setActivated(true);
+        // new user gets registration key
+        newUser.setActivationKey(null);
+
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);

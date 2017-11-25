@@ -26,7 +26,7 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:file:./target/h2db/db/wego;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:wego;DB_CLOSE_DELAY=-1
         username: wego
         password:
     h2:

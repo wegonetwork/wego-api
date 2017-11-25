@@ -95,7 +95,6 @@
         "no-consecutive-blank-lines": [true],
         "object-literal-shorthand": true,
         "space-before-function-paren": [true, "never"],
-
         "directive-selector": [true, "attribute", "jhi", "camelCase"],
         "component-selector": [true, "element", "jhi", "kebab-case"],
         "use-input-property-decorator": true,

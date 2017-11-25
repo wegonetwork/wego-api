@@ -2,7 +2,7 @@
 Off chain Server
 =======
 # wego
-This application was generated using JHipster 4.6.2, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.6.2](https://jhipster.github.io/documentation-archive/v4.6.2).
+This project is part of WeGo platform, a ride sharing application. This project is temporary off chain business logic and data persistence for the platform. 
 
 ## Development
 
